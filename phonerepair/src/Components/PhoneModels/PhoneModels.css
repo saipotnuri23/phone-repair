@@ -1,0 +1,240 @@
+.device-selector {
+  padding: 20px;
+  max-width: 900px;
+  margin:auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #bcc9df, #839dd4);
+  border-radius: 10px;
+  margin-bottom: 260px;
+  margin-top:50px
+  }
+  .device-selector h2{
+    margin-bottom: 15px;
+  }
+  .device-selector p{
+    margin-bottom:30px;
+    margin:0px
+  }
+
+
+.device-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.device-card {
+  background: transparent;
+  padding: 10px;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.device-card.active {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: 
+    linear-gradient(rgb(190, 199, 154), white) padding-box,
+    linear-gradient(to right, #00c6ff, #0072ff) border-box;
+    
+}
+
+
+.device-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.brands {
+  margin-top: 20px;
+}
+
+.brand-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.brand-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #d4d4d4;
+  border-radius: 500px;
+  font-weight: bold;
+   cursor: pointer;
+
+}
+
+.brand-btn.active {
+  background-color: #757575;
+  color: white;
+}
+
+.model-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #eaeaea;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  max-width: 250px;
+  margin-inline: auto;
+}
+
+.next-btn {
+  margin-top: 20px;
+  background: linear-gradient(180deg, #5179a4, #3a2eb5);
+  color: white;
+  padding:15px 50px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.next-btn:hover{
+    background-color: #f9f9ff;
+}
+
+.device-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.brand-buttons {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  gap: 10px;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+.brand-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.brand-buttons::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 1000px;
+  scroll-behavior: smooth;
+}
+
+.brand-btn {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'poppins', sans-serif;
+}
+
+.brand-btn.active {
+  background: linear-gradient(180deg, #7bb18d, #4b6385);
+  color: white;
+  border: none;
+}
+.brand-buttons {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; /* prevents vertical scroll bleed */
+  white-space: nowrap;
+  padding: 10px 0;
+  gap: 10px;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scroll-behavior: smooth;   /* smooth scroll effect */
+  overscroll-behavior: contain; /* key to prevent page scroll */
+}
+
+.brand-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.brand-buttons::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+.model-list {
+  max-height: 300px;         /* adjust height as needed */
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  scrollbar-width: thin; /* Firefox */
+}
+
+.model-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.model-list::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 8px;
+}
+.model-search {
+  display: block;
+  margin: 10px auto 15px;
+  padding: 8px 12px;
+  width: 80%;
+  max-width: 300px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.model-item {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.model-item:hover {
+  background-color: #e0e0e0;
+}
+
+.model-item.active {
+  background: linear-gradient(180deg, #5ea576, #657388);
+  border-radius: 10px;
+  color: white;
+}
+.model-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.model-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+}
+
+.model-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #007bff, #00c6ff);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+
+
+

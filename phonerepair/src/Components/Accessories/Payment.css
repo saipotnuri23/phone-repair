@@ -1,0 +1,152 @@
+.payment-wrapper {
+  padding: 50px;
+  font-family: sans-serif;
+  background-color: #a1b5ec;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.payment-box {
+  display: flex;
+  width: 100%;
+  height: 80vh; /* makes the card taller */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.payment-methods {
+  flex: 1;
+  border-right: 1px solid #9e9191;
+  padding: 20px 50px;
+  background: #f5f6ff;
+}
+.payment-methods h2{
+  padding-bottom: 10px;
+}
+
+.method-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.method-list li {
+  padding: 20px 26px;
+  cursor: pointer;
+  border-bottom: 0.1px solid #c8bdbd;
+  transition: background 0.2s;
+  margin:15px 0px;
+}
+
+.method-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.method-list li.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+  border-left: 4px solid #007bff;
+  color: #007bff;
+  border-radius: 50px;
+}
+
+.payment-details {
+  flex: 2;
+  padding: 30px;
+}
+
+.upi-box label {
+  display: block;
+  padding:10px;
+  font-weight: 600;
+}
+
+.upi-options {
+  display: flex;
+  flex-direction: column; /* Stack options vertically */
+  gap: 15px;
+  margin: 15px 0 25px 0;
+}
+
+.upi-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upi-option input[type="radio"] {
+  margin: 0;
+  transform: translateY(1px); 
+  border-color: #007bff;
+
+ 
+}
+
+
+.upi-option img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin-left: 20px;
+  
+}
+
+.upi-option:hover {
+  background: #e8e8ff;
+}
+
+
+
+
+
+input[type="text"],
+select {
+  width:100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  
+}
+.netbanking-box select{
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1d45f8;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color:white;
+  
+}
+.cod-box p{
+  margin:20px;
+  
+}
+.input-error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  
+}

@@ -1,0 +1,114 @@
+.Navbar {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: sticky;
+  background: linear-gradient(90deg, #274983 0%, #adb9dff5 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.Navbar .logo {
+  width: 65px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.Navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 80px;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 200px;
+  
+}
+
+.Navbar-menu li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.Navbar-menu li:hover {
+  color: #0033cc;
+}
+
+.Navbar-menu .Active {
+  padding-bottom: 2px;
+  border-bottom: solid 2px black;
+}
+
+/* ✅ Login button styling */
+.login-btn {
+  background: none;
+  border: none;
+  color: rgb(120, 93, 129);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.login-btn:hover {
+  color: #0033cc;
+}
+
+
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.user-dropdown span {
+  font-weight: bold;
+  color: #695a06;
+  font-size: 16px;
+}
+
+.user-dropdown button {
+  background-color: #1ad324;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.user-dropdown button:hover {
+  background-color: #d93636;
+}
+
+
+@media (max-width: 600px) {
+  .Navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+
+  .Navbar .logo {
+    margin-bottom: 10px;
+  }
+
+  .Navbar-menu {
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+}

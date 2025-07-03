@@ -1,0 +1,89 @@
+.buy-now-page {
+  display: flex;
+  min-height: 80vh;
+  max-width: 1200px;
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.buy-now-left {
+  flex: 1;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.buy-now-left img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.buy-now-right {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buy-now-right h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.buy-now-right p.price {
+  font-size: 22px;
+  color: #090a0a;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.buy-now-right ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.buy-now-right ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.buy-now-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.buy-now-buttons button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy-now-buttons .add-cart-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.buy-now-buttons .buy-now-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.buy-now-buttons button:hover {
+  opacity: 0.9;
+}

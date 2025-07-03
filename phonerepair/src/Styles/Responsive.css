@@ -1,0 +1,46 @@
+/* dynamic viewport unit for mobile address-bar shrink */
+@supports (height: 100dvh) {
+  .home { min-height: 100dvh; }
+}
+
+/* prevent side-scroll on tiny screens */
+html, body { overflow-x: hidden; }
+
+/* unified light-blue backdrop */
+.home,
+.feature-section,
+.repairs-section,
+.cta-panel { background-color: #a6b9d3 !important; }
+
+/* keyboard focus */
+button:focus-visible,
+a:focus-visible { outline: 2px solid #0033cc; outline-offset: 2px; }
+
+/* tablet & small-laptop */
+@media (max-width: 1024px) {
+  .home-container { flex-direction: column; }
+  .divider        { display: none; }
+  .right-section  { order:-1; }
+  .home           { margin-top: 0; }
+  .feature-section{
+    transform:none;
+    margin-top:2rem;
+  }
+}
+
+/* phone */
+@media (max-width: 768px) {
+  .left-section   { padding: 30px 20px; }
+  .feature-section,
+  .repairs-section,
+  .cta-panel      { padding: 20px; }
+}
+
+/* Safari ≤14 flex‐gap fallback */
+@supports not (gap: 1rem) {
+  .feature-section{ gap:0; }
+  .feature-card   { margin:15px; }
+}
+/* ----- Fix overlapping by removing negative margins and adding clean spacing ----- */
+
+

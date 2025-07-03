@@ -1,0 +1,22 @@
+.filter-sidebar {
+  width: 250px;
+  border-right: 1px solid #ddd;
+  padding: 15px;
+  background: #f9f9f9;
+  height:fit-content;
+  margin-top: 50px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.clear-filter {
+  background: #674d4a;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}

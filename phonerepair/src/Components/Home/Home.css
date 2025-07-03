@@ -1,0 +1,251 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px); 
+  padding: 0px 30px 30px;
+  margin-top: -80px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.home-container {
+  display: flex;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  width: 100%;
+  
+}
+
+.left-section {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #0033cc;
+  background-color: white;
+  font-family: 'poppins', sans-serif;
+}
+
+.left-section h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0033cc;
+}
+
+.left-section h3 {
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  margin-bottom: 80px;
+}
+
+.left-section button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #0033cc;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.left-section button:hover {
+  background-color: #0022aa;
+}
+
+.divider {
+  width: 10px;
+  background-color: #0033cc;
+  border-radius: 20px;
+}
+
+.right-section {
+  flex: 1;
+  background-color: #e4e9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home-image {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.feature-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 30px;
+ background-color: #7a9cd7f6;
+  flex-wrap: wrap;
+  margin-top: -170px;
+  
+}
+
+.feature-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feature-card h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  font-family:'poppins', sans-serif;
+  text-align: justify;
+}
+
+.repairs-section {
+  text-align: center;
+  padding: 50px 30px;
+  background: linear-gradient(to bottom, #a0bce0 0%, #7c8fb5 100%);
+  color: #0a4858;
+}
+
+.repairs-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #114f65;
+}
+
+
+.repairs-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.repair-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.repair-card:hover {
+  transform: translateY(-6px);
+}
+
+.repair-card img {
+  width: 80px;
+  margin-bottom: 5px;
+ align-self: center;
+}
+
+.repair-card h4 {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  color: #111;
+  align-self: center;
+}
+
+.repair-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.45;
+  font-family: 'segoe ui', sans-serif;
+  
+  
+}
+
+
+.cta-panel {
+ 
+  border-radius: 50px;
+  margin: 60px auto;
+  padding: 50px 40px;
+  max-width: 1100px;
+  text-align: center;
+  background: linear-gradient(to bottom, #778094, #4d5a8d);
+  
+}
+
+.cta-panel h3 {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: #302b2b;
+}
+
+.cta-panel p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 35px;
+  color: #d8cfcf;
+  line-height: 1.6;
+}
+
+.cta-panel button {
+  padding: 14px 36px;
+  border: none;
+  border-radius: 50px;
+  background: #0039d4;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-panel button:hover {
+  background: #0028a5;
+}
+
+
+@media (max-width: 480px) {
+  .cta-panel {
+    padding: 40px 20px;
+  }
+}
+
+
+.device-track-wrapper.large{
+  width:340px;                
+  overflow:hidden;
+}
+.device-img.large{
+  width:320px;                
+  height:auto;
+  flex-shrink:0;
+  margin-right:20px;
+}
+
+
