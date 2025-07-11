@@ -31,10 +31,20 @@ const ShopList = ({ onSelect }) => {
   ];
 
   const handleAccept = (id) => {
-    setSelectedShopId(id);
-    if (onSelect) onSelect(id);
-    navigate('/payment'); // <-- Navigate to payment page
+  setSelectedShopId(id);
+  const selectedShop = shops.find((shop) => shop.id === id);
+
+  const orderData = {
+    issues: JSON.parse(localStorage.getItem("selectedIssues")) || [], // already selected issues from previous step
+    shop: selectedShop,
+    orderDate: new Date().toISOString() // ✅ Save exact time when order placed
   };
+
+  localStorage.setItem("orderData", JSON.stringify(orderData));
+
+  if (onSelect) onSelect(id);
+  navigate('/payment'); // Or wherever your next step is
+};
 
   return (
     <div className="shop-grid">

@@ -8,6 +8,7 @@ export default function Repair() {
   const navigate = useNavigate();
 
   const [selectedIssues, setSelectedIssues] = useState([]);
+  const [description, setDescription] = useState('');
   const [error, setError] = useState('');
 
   const handleIssueToggle = (issue) => {
@@ -20,10 +21,15 @@ export default function Repair() {
   };
 
   const handleContinue = () => {
-    if (selectedIssues.length === 0) {
-      setError("Please select an issue.");
+    if (selectedIssues.length === 0 && description.trim() === '') {
+      setError("Please select an issue or describe the problem.");
     } else {
-      navigate("/ShopList", { state: { issues: selectedIssues } });
+      navigate("/NearShops", {
+        state: {
+          issues: selectedIssues,
+          description: description.trim()
+        }
+      });
     }
   };
 
@@ -69,10 +75,11 @@ export default function Repair() {
           {error && <p className="error-message">{error}</p>}
 
           <textarea
-            placeholder="describe other issues"
+            placeholder="Describe other issues"
             className="issue-textarea"
             rows="6"
-            onChange={(e) => handleIssueToggle(e.target.value)}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
 
           <div className="action-buttons">

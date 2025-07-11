@@ -1,0 +1,124 @@
+.mo-orders-page {
+  padding: 40px 24px;
+  max-width: 1400px;
+  margin: 50px auto;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f9fafb, #f1f5f9);
+}
+
+.mo-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+.mo-section-heading {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #374151;
+  border-left: 5px solid #3b82f6;
+  padding-left: 10px;
+}
+
+.mo-no-orders {
+  text-align: center;
+  font-size: 18px;
+  color: #6b7280;
+  background-color: #fef2f2;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.mo-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mo-order-card {
+  width: 100%;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.mo-order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.mo-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.mo-order-header h4 {
+  font-size: 18px;
+  color: #111827;
+  margin: 0;
+}
+
+.mo-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mo-status.pending,
+.mo-status.processing,
+.mo-status.in-progress {
+  background-color: #fef9c3;
+  color: #b45309;
+}
+
+.mo-status.delivered {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.mo-status.cancelled {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.mo-order-details {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.mo-order-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mo-view-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  outline: none;
+}
+
+.mo-view-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}

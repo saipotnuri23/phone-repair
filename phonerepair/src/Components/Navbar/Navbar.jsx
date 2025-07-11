@@ -1,22 +1,83 @@
-// Navbar.jsx
-import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import {
+  FaBars,
+  FaBell,
+  FaBoxOpen,
+  FaClipboardList,
+  FaInfoCircle,
+  FaSignOutAlt,
+  FaShoppingCart
+} from 'react-icons/fa';
 import logo from '../../assets/Logo.png';
 import './Navbar.css';
 
 const Navbar = ({ onLoginClick, isLoggedIn }) => {
   const [user, setUser] = useState(null);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showConfirmLogout, setShowConfirmLogout] = useState(false);
+  const [notificationCount, setNotificationCount] = useState(3); // Example count
+  const [cartCount, setCartCount] = useState(0); // New: cart item count
+  const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem('user'));
     setUser(savedUser);
-  }, [isLoggedIn]); // <-- rerun effect when login status changes
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartCount(cartItems.length);
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('isLoggedIn');
     setUser(null);
+    setShowConfirmLogout(false);
     window.location.reload();
+  };
+
+  const handleMenuClick = (action) => {
+    setShowMenu(false);
+    switch (action) {
+      case 'notifications':
+        setNotificationCount(0);
+        navigate('/notifications');
+        break;
+        case 'responses':
+  navigate('/responded-offers');
+  break;
+
+      case 'track':
+        navigate('/track-order');
+        break;
+      case 'orders':
+        navigate('/my-orders');
+        break;
+      case 'cart':
+        navigate('/cart');
+        break;
+      case 'about':
+        navigate('/about');
+        break;
+      case 'logout':
+        setShowConfirmLogout(true);
+        break;
+      default:
+        break;
+    }
   };
 
   const getInitials = (name) => {
@@ -37,15 +98,66 @@ const Navbar = ({ onLoginClick, isLoggedIn }) => {
         <li><NavLink to="/faq" className={({ isActive }) => isActive ? 'Active' : ''}>FAQs</NavLink></li>
         <li>
           {isLoggedIn && user ? (
-            <div className="user-dropdown">
+            <div className="menu-dropdown-container" ref={menuRef}>
               <span className="username">{getInitials(user.name)}</span>
-              <button onClick={handleLogout}>Logout</button>
+              <FaBars className="menu-icon" onClick={() => setShowMenu(!showMenu)} />
+              {showMenu && (
+                <div className="dropdown-menu">
+                  <div className="dropdown-item-with-badge" onClick={() => handleMenuClick('notifications')}>
+                    <FaBell className="dropdown-icon" />
+                    Notifications
+                    {notificationCount > 0 && (
+                      <span className="notification-badge">{notificationCount}</span>
+                    )}
+                  </div>
+
+                  <div className="dropdown-item-with-badge" onClick={() => handleMenuClick('cart')}>
+                    <FaShoppingCart className="dropdown-icon" />
+                    My Cart
+                    {cartCount > 0 && (
+                      <span className="notification-badge">{cartCount}</span>
+                    )}
+                  </div>
+
+                  <div onClick={() => handleMenuClick('track')}>
+                    <FaBoxOpen className="dropdown-icon" /> Track Your Order
+                  </div>
+                  <div onClick={() => handleMenuClick('responses')}>
+  <FaClipboardList className="dropdown-icon" /> View Responses
+</div>
+
+
+                  <div onClick={() => handleMenuClick('orders')}>
+                    <FaClipboardList className="dropdown-icon" /> My Orders
+                  </div>
+
+                  <div onClick={() => handleMenuClick('about')}>
+                    <FaInfoCircle className="dropdown-icon" /> About Us
+                  </div>
+
+                  <div onClick={() => handleMenuClick('logout')}>
+                    <FaSignOutAlt className="dropdown-icon" /> Logout
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
             <button onClick={onLoginClick} className="login-btn">Login</button>
           )}
         </li>
       </ul>
+
+      {showConfirmLogout && (
+        <div className="logout-modal-overlay">
+          <div className="logout-modal">
+            <p>Are you sure you want to logout?</p>
+            <div className="logout-buttons">
+              <button className="confirm-btn" onClick={handleLogout}>Yes, Logout</button>
+              <button className="cancel-btn" onClick={() => setShowConfirmLogout(false)}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

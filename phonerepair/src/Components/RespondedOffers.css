@@ -1,0 +1,111 @@
+.offers-container {
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #cce3f7, #eef2ff);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.offers-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1f3a93;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.offer-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.7s ease-in-out;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.shop-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.offer-info {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #444;
+}
+
+.offer-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.accept-btn,
+.decline-btn {
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.accept-btn {
+  background: #006eff;
+  color: #fff;
+}
+
+.accept-btn:hover {
+  background: #004fd1;
+}
+
+.decline-btn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.decline-btn:hover {
+  background: #bdbdbd;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  .offers-heading {
+    font-size: 1.8rem;
+  }
+
+  .accept-btn,
+  .decline-btn {
+    width: 48%;
+    font-size: 0.85rem;
+  }
+}

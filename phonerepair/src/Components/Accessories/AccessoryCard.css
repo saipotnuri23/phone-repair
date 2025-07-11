@@ -1,36 +1,196 @@
-.accessory-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
-  background: white;
-  border-radius: 10px;
-  font-family: 'Arial', 'Helvetica Neue', sans-serif;
-  text-align: justify;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.accessory-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: contain;
-}
 
-.accessory-card .ratings {
-  color: #c67907;
-  font-weight: bold;
-}
-
-.accessory-card .features {
-  list-style: none;
-  padding: 0;
-  font-size: 14px;
-  margin: 10px 0;
-   font-family: 'Arial', 'Helvetica Neue', sans-serif;
-  text-align: justify;
+.accessories-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: #b3bedc;
+  font-family: sans-serif;
   
 }
 
-.accessory-card h3 {
-  margin-top: 10px;
-  font-size: 18px;
-  color: #000;
+
+.filter-sidebar {
+  flex: 1;
+  max-width: 240px;
+  background: #f9fded8c;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 20px;
+  min-height: 100vh;
 }
+
+/* Main content area */
+.accessories-main {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header with sort dropdown */
+.accessories-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sort-select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: auto;
+}
+
+/* Product grid layout */
+.accessories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Product card */
+
+.accessory-card {
+  flex-basis: 25%;
+  padding: 16px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  animation: fadeIn 0.4s ease forwards;
+
+  /* Important resets to prevent inherited border/shadow */
+  border: none !important;
+  outline: none !important;
+  
+}
+
+
+
+.accessory-card:hover {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transform: translateY(-4px);
+  z-index: 1;
+  
+}
+
+
+
+
+
+/* Product image */
+.accessory-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.product-features {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;          /* Show only 2 lines */
+  line-clamp: 2;                  /* Standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: #444;
+  margin-top: 4px;
+}
+
+
+/* Product info */
+.product-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #212121;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.rating-line {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 30px;
+  
+}
+
+.rating {
+  background-color: #388e3c;
+  color: white;
+  padding: 0px 6px;
+  border-radius: 4px;
+}
+
+.reviews {
+  color: #666;
+}
+
+.price-line {
+  font-size: 17px;
+  font-weight: 600;
+  color: #212121;
+ 
+}
+
+/* No results text */
+.no-results {
+  padding-top: 150px;
+  font-size: 25px;
+  text-align: center;
+  color: #110f0f;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .accessory-card {
+    flex-basis: 33.33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .accessories-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .filter-sidebar {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .accessory-card {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .accessory-card {
+    flex-basis: 100%;
+  }
+}
+

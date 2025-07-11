@@ -9,17 +9,27 @@ const AccessoryCard = ({ data }) => {
     navigate(`/buy/${data.id}`, { state: data });
   };
 
+  // Fallback logic for image source
+  const imageSrc = data.image || (Array.isArray(data.images) ? data.images[0] : '');
+
   return (
     <div className="accessory-card" onClick={handleClick}>
-      <img src={data.image} alt={data.name} />
-      <h4>{data.name}</h4>
-      <p className="ratings">
-        {data.rating} | {data.reviews} Ratings
-      </p>
-      <ul className="features">
-        {data.features.map((f, i) => <li key={i}>• {f}</li>)}
-      </ul>
-      <h3>₹{data.price}</h3>
+      <img src={imageSrc} alt={data.name} />
+
+      <h4 className="product-title">{data.name}</h4>
+
+      <p className="product-features">{data.features}</p>
+
+      <p className="subtitle">{data.subtitle}</p>
+
+      <div className="rating-line">
+        <span className="rating">{data.rating} ★</span>
+        <span className="reviews">({Number(data.reviews).toLocaleString()})</span>
+      </div>
+
+      <div className="price-line">
+        <span className="price">₹{data.price}</span>
+      </div>
     </div>
   );
 };

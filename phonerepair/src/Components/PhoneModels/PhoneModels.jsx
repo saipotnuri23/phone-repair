@@ -256,7 +256,7 @@ export default function PhoneModels() {
 
   return (
     <div className="device-selector">
-      <h2>Tap your device to begin</h2>
+      <h2>What Kind of device are you having Trouble with?</h2>
       <p>Our experts will assess your device and get it back to you — refreshed, restored, reliable.</p>
 
       <div className="device-grid">

@@ -231,3 +231,83 @@
 .contact-form{
   width:80%;
 }
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation to the main sections */
+.contact-section {
+  animation: fadeIn 1s ease forwards;
+}
+
+.contact-info {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.contact-form {
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Animate header */
+.header {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Animate shop list and map */
+.location-content {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Smooth input focus transitions */
+.input-group input,
+.input-group textarea {
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-bottom: 2px solid #2563eb;
+  background: rgba(37, 99, 235, 0.05);
+}
+
+
+.submit-btn button {
+  transition: all 0.3s ease;
+}
+
+.submit-btn button:hover {
+  transform: scale(1.05);
+  background: #0039a6;
+}

@@ -5,6 +5,7 @@
   justify-content: flex-start;
   align-items: center;
   position: sticky;
+  top: 0;
   background: linear-gradient(90deg, #274983 0%, #adb9dff5 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -25,7 +26,6 @@
   font-size: 18px;
   font-weight: 500;
   margin-left: 200px;
-  
 }
 
 .Navbar-menu li {
@@ -47,7 +47,6 @@
   border-bottom: solid 2px black;
 }
 
-/* ✅ Login button styling */
 .login-btn {
   background: none;
   border: none;
@@ -57,42 +56,76 @@
   cursor: pointer;
   transition: color 0.3s;
   font-family: 'Poppins', sans-serif;
-  
 }
 
 .login-btn:hover {
   color: #0033cc;
 }
 
-
-.user-dropdown {
+.menu-dropdown-container {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-family: 'Poppins', sans-serif;
+  gap: 8px;
 }
 
-.user-dropdown span {
+.username {
   font-weight: bold;
-  color: #695a06;
+  color: #fff;
   font-size: 16px;
+  background-color: #f5d000;
+  padding: 6px 10px;
+  border-radius: 50px;
 }
 
-.user-dropdown button {
-  background-color: #1ad324;
-  border: none;
-  border-radius: 6px;
-  padding: 4px 10px;
+.menu-icon {
+  font-size: 20px;
   color: white;
   cursor: pointer;
+  background-color: #274983;
+  padding: 6px;
+  border-radius: 6px;
+  padding:5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 180px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   font-size: 14px;
-  transition: background-color 0.3s ease;
+  z-index: 999;
+  animation: dropdownFade 0.2s ease-in-out;
 }
 
-.user-dropdown button:hover {
-  background-color: #d93636;
+.dropdown-menu div {
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
 }
 
+.dropdown-menu div:hover {
+  background-color: #f2f4ff;
+}
+
+.dropdown-menu div:last-child {
+  border-bottom: none;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @media (max-width: 600px) {
   .Navbar {
@@ -103,6 +136,16 @@
   .Navbar .logo {
     margin-bottom: 10px;
   }
+  .menu-dropdown-container {
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.dropdown-menu {
+  right: 10px;
+  width: 90%;
+}
+
 
   .Navbar-menu {
     flex-wrap: wrap;
@@ -112,3 +155,90 @@
     justify-content: center;
   }
 }
+.dropdown-icon {
+  font-size: 16px;
+  color: #274983;
+  margin-right: 8px;
+}
+
+/* Modal */
+.logout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.logout-modal {
+  background: white;
+  padding: 24px 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  text-align: center;
+  width: 320px;
+  animation: dropdownFade 0.25s ease;
+}
+
+.logout-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.confirm-btn {
+  background-color: #d93636;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #aaa;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dropdown-item-with-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  line-height: 1;
+  min-width: 18px;
+  text-align: center;
+}
+.notification-badge {
+  background-color: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+

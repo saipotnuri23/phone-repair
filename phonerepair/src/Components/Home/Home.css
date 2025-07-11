@@ -248,4 +248,52 @@
   margin-right:20px;
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to sections */
+.feature-card,
+.repair-card,
+.cta-panel {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Delay each feature card for a staggered effect */
+.feature-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.feature-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.feature-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Delay repair cards too */
+.repair-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.repair-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.repair-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.repair-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* Delay CTA panel */
+.cta-panel {
+  animation-delay: 1s;
+}
 

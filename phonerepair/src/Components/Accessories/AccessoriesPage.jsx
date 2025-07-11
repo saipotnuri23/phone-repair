@@ -13,7 +13,7 @@ const AccessoriesPage = () => {
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
 
-  const itemsPerPage = 9;
+  const itemsPerPage = 8;
 
   // Apply filters
   const filterData = accessoriesData.filter((item) => {
